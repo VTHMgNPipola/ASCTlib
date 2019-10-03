@@ -10,8 +10,8 @@ import java.awt.Graphics2D;
 public abstract class StaticTile extends Tile {
     private static final long serialVersionUID = -8394105447224475941L;
 
-    protected StaticTile(int posX, int posY, Color color, String name) {
-        super(posX, posY, color, name);
+    protected StaticTile(int posX, int posY, Color color, String name, String shortenedName) {
+        super(posX, posY, color, name, shortenedName);
     }
 
     @Override

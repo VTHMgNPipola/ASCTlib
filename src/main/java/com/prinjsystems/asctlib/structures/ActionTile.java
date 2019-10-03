@@ -32,9 +32,8 @@ public abstract class ActionTile extends Tile {
      */
     protected boolean powered;
 
-    protected ActionTile(int posX, int posY, Color color, String name, boolean powered) {
-        super(posX, posY, color, name);
-        this.powered = powered;
+    protected ActionTile(int posX, int posY, Color color, String name, String shortenedName) {
+        super(posX, posY, color, name, shortenedName);
     }
 
     public boolean isPowered() {

@@ -12,8 +12,9 @@ public abstract class LogicGate extends Transistor {
 
     private Color insideColor;
 
-    protected LogicGate(int posX, int posY, Color color, String name) {
+    protected LogicGate(int posX, int posY, Color color, String name, String shortenedName) {
         super(posX, posY);
+        this.shortenedName = shortenedName;
         this.name = name;
         this.insideColor = color;
         conductive = true;

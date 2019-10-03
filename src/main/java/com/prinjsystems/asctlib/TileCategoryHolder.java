@@ -12,11 +12,11 @@ import java.util.List;
 public class TileCategoryHolder {
     private static final TileCategoryHolder instance = new TileCategoryHolder();
 
-    private List<String> categories;
+    private List<TileCategory> categories;
 
     private TileCategoryHolder() {
         categories = new ArrayList<>();
-        categories.add("structural");
+        categories.add(new TileCategory("structural"));
     }
 
     public static TileCategoryHolder getInstance() {
@@ -33,16 +33,18 @@ public class TileCategoryHolder {
      * @param category Category to be registered.
      */
     public void registerCategory(String category) {
-        if (categories.contains(category.toLowerCase())) {
-            throw new IllegalArgumentException("Category '" + category + "' already exists!");
+        for (TileCategory ctg : categories) {
+            if (ctg.getName().equals(category.toLowerCase())) {
+                throw new IllegalArgumentException("Category '" + category + "' already exists!");
+            }
         }
-        categories.add(category.toLowerCase());
+        categories.add(new TileCategory(category.toLowerCase()));
     }
 
     /**
      * @return Unmodifiable version of the list of tile categories.
      */
-    public List<String> getCategories() {
+    public List<TileCategory> getCategories() {
         return Collections.unmodifiableList(categories);
     }
 }

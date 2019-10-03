@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * create a Tile you will need to extend the class {@link StaticTile}, if you want a tile that don't actively do
  * something, or {@link ActionTile} if you want a tile that can respond to some actions (such as wires or logic gates).
  */
-public abstract class Tile implements Serializable {
+public abstract class Tile implements Serializable, Comparable {
     /**
      * This is the base size of a tile inside the game.
      */
@@ -75,11 +75,12 @@ public abstract class Tile implements Serializable {
     /**
      * Will create a tile with a X and Y position, a color and a name.
      */
-    protected Tile(int posX, int posY, Color color, String name) {
+    protected Tile(int posX, int posY, Color color, String name, String shortenedName) {
         this.posX = posX;
         this.posY = posY;
         this.color = color;
         this.name = name;
+        this.shortenedName = shortenedName;
         temp = 27; // 27 Celsius
     }
 
@@ -196,5 +197,15 @@ public abstract class Tile implements Serializable {
                 temp -= temp * irradiationRatio;
             }
         }
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (!(o instanceof Tile)) {
+            throw new IllegalArgumentException("Illegal type '" + o.getClass().getName() + "' tried to be compared with '"
+                    + Tile.class.getName() + "'!");
+        }
+
+        return (((Tile) o).getName()).compareTo(name);
     }
 }
