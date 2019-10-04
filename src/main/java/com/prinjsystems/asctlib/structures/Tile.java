@@ -206,6 +206,6 @@ public abstract class Tile implements Serializable, Comparable {
                     + Tile.class.getName() + "'!");
         }
 
-        return (((Tile) o).getName()).compareTo(name);
+        return name.compareTo(((Tile) o).getName());
     }
 }

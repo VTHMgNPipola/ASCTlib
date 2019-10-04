@@ -14,7 +14,7 @@ public class GameMap implements Serializable {
     private int currentLayer;
 
     /**
-     * Creates a GameMap, already initialized with a list of layer in it.
+     * Creates a GameMap, already initialized with a list of layers in it.
      *
      * @param layers Layers to include in this GameMap.
      */
