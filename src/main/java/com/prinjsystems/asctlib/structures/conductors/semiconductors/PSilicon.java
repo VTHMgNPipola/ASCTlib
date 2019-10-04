@@ -1,8 +1,10 @@
 package com.prinjsystems.asctlib.structures.conductors.semiconductors;
 
+import com.prinjsystems.asctlib.PlaceableTile;
 import com.prinjsystems.asctlib.structures.conductors.ConductorTile;
 import java.awt.Color;
 
+@PlaceableTile("logic")
 public class PSilicon extends ConductorTile {
     private static final long serialVersionUID = 7373229821931252770L;
 

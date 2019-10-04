@@ -1,9 +1,11 @@
 package com.prinjsystems.asctlib.structures.conductors.semiconductors;
 
+import com.prinjsystems.asctlib.PlaceableTile;
 import com.prinjsystems.asctlib.structures.Tile;
 import com.prinjsystems.asctlib.structures.conductors.ConductorTile;
 import java.awt.Color;
 
+@PlaceableTile("logic")
 public class NSilicon extends ConductorTile {
     private static final long serialVersionUID = -649556609668628613L;
 

@@ -16,7 +16,8 @@ public class TileCategoryHolder {
 
     private TileCategoryHolder() {
         categories = new ArrayList<>();
-        categories.add(new TileCategory("structural"));
+        registerCategory("structural");
+        registerCategory("logic");
     }
 
     public static TileCategoryHolder getInstance() {
