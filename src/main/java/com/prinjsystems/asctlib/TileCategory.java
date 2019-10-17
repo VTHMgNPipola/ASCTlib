@@ -4,6 +4,10 @@ import com.prinjsystems.asctlib.structures.Tile;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A TileCategory is, as the name implies, a category of tiles. A category of tiles is a "collection" of tiles, that
+ * will be shown as a exclusive button in the tile selection panels of ASCT.
+ */
 public class TileCategory {
     private String name;
     private List<Tile> tiles;
@@ -31,6 +35,11 @@ public class TileCategory {
         this.tiles = tiles;
     }
 
+    /**
+     * Will return the index of the currently selected Tile, instead of the Tile itself, as in {@link #getCurrentTile()}.
+     *
+     * @return Index of the currently selected Tile.
+     */
     public int getCurrentTileIndex() {
         return currentTile;
     }
@@ -39,6 +48,11 @@ public class TileCategory {
         this.currentTile = currentTile;
     }
 
+    /**
+     * Will return the Tile that is currently selected.
+     *
+     * @return Selected Tile.
+     */
     public Tile getCurrentTile() {
         return tiles.get(currentTile);
     }
