@@ -83,6 +83,9 @@ public class Layer implements Serializable {
      * @param tile Tile to be added to this layer.
      */
     public void addTile(Tile tile) {
+        if (tile == null) {
+            return;
+        }
         tiles[tile.getPosX() + tile.getPosY() * LAYER_SIZE] = tile;
         tile.from = this;
     }

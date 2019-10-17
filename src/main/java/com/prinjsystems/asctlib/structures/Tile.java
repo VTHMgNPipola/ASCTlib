@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * create a Tile you will need to extend the class {@link StaticTile}, if you want a tile that don't actively do
  * something, or {@link ActionTile} if you want a tile that can respond to some actions (such as wires or logic gates).
  */
-public abstract class Tile implements Serializable, Comparable {
+public abstract class Tile implements Serializable, Comparable, Cloneable {
     /**
      * This is the base size of a tile inside the game.
      */
@@ -207,5 +207,10 @@ public abstract class Tile implements Serializable, Comparable {
         }
 
         return name.compareTo(((Tile) o).getName());
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
