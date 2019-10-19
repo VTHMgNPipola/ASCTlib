@@ -12,6 +12,11 @@ import java.awt.Graphics2D;
 public abstract class ConductorTile extends ActionTile {
     private static final long serialVersionUID = -1614333273624363555L;
 
+    /**
+     * This color is drawn instead of the tile's own color if it is powered.
+     */
+    public static final Color POWERED_COLOR = new Color(255, 191, 0);
+
     private ActionTile connectedTo; // If connectedTo is not null then the conductor/wire is a via
 
     protected ConductorTile(int posX, int posY, Color color, String name, String shortenedName) {
@@ -39,7 +44,7 @@ public abstract class ConductorTile extends ActionTile {
 
     @Override
     public Color getColor() {
-        return powered ? new Color(255, 191, 0) : color;
+        return powered ? POWERED_COLOR : color;
     }
 
     @Override

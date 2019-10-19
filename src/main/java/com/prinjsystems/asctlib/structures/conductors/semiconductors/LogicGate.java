@@ -17,7 +17,7 @@ public abstract class LogicGate extends Transistor {
         this.shortenedName = shortenedName;
         this.name = name;
         this.insideColor = color;
-        conductive = true;
+        conductive = false;
     }
 
     @Override
