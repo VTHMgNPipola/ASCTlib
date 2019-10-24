@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A TileCategory is, as the name implies, a category of tiles. A category of tiles is a "collection" of tiles, that
- * will be shown as a exclusive button in the tile selection panels of ASCT.
+ * A TileCategory is, as the name implies, a category of tiles. A category is a "collection" of tiles, that
+ * will be shown as an unique button in the tile selection panels of ASCT.
  */
 public class TileCategory {
     private String name;
